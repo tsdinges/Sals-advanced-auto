@@ -1,0 +1,36 @@
+.button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 48px;
+  padding: 12px 22px;
+  border: 2px solid transparent;
+  border-radius: var(--radius);
+  font: 700 16px/1.2 var(--font-body);
+  text-decoration: none;
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+.primary {
+  background: var(--color-lake);
+  border-color: var(--color-lake);
+  color: var(--color-lake-ink);
+}
+
+.brand {
+  background: var(--color-bay);
+  border-color: var(--color-bay);
+  color: var(--color-bay-ink);
+}
+
+.outline {
+  background: transparent;
+  border-color: var(--color-ink);
+  color: var(--color-ink);
+}
+
+.block {
+  width: 100%;
+}

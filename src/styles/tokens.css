@@ -1,0 +1,54 @@
+/*
+ * Design tokens. Every color, font and spacing value used by
+ * components comes from here, so a rebrand is a one-file change.
+ * Light theme by default; dark theme follows the device setting.
+ */
+:root {
+  /* color */
+  --color-bg: #eef2f3;
+  --color-surface: #ffffff;
+  --color-ink: #132029;
+  --color-muted: #55636c;
+  --color-line: #cbd5d9;
+  --color-lake: #1d4f73; /* primary action */
+  --color-lake-ink: #ffffff;
+  --color-bay: #f3c41c; /* brand yellow */
+  --color-bay-ink: #1a1a10;
+  --color-ok: #1f7a45;
+  --color-closed: #a33a2a;
+  /* header is always dark, in both themes */
+  --color-header-bg: #132029;
+  --color-header-ink: #eef2f3;
+
+  /* type */
+  --font-display: "Big Shoulders Display", "Arial Narrow", Impact, sans-serif;
+  --font-body: "Public Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", ui-monospace, Menlo, Consolas, monospace;
+
+  /* layout */
+  --container-max: 1120px;
+  --gutter-left: max(16px, env(safe-area-inset-left, 0px));
+  --gutter-right: max(16px, env(safe-area-inset-right, 0px));
+  --radius: 4px;
+  --radius-lg: 6px;
+  --header-height: 72px;
+  --mobile-bar-height: 72px;
+
+  color-scheme: light;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg: #0e161c;
+    --color-surface: #16222a;
+    --color-ink: #e6edf0;
+    --color-muted: #97a6ae;
+    --color-line: #2b3b45;
+    --color-lake: #5fa3d4;
+    --color-lake-ink: #0b1720;
+    --color-ok: #4cc27e;
+    --color-closed: #ef7b66;
+    --color-header-bg: #0a1116;
+    color-scheme: dark;
+  }
+}

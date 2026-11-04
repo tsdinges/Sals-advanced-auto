@@ -1,0 +1,101 @@
+.header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: var(--color-header-bg);
+  color: var(--color-header-ink);
+  padding-top: env(safe-area-inset-top, 0px);
+}
+
+.inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding-block: 12px;
+}
+
+/* Brand: large, all-yellow wordmark per owner feedback (2026-10-21) */
+.brand {
+  font: 900 40px/0.9 var(--font-display);
+  text-transform: uppercase;
+  letter-spacing: 0.01em;
+  color: var(--color-bay);
+  text-decoration: none;
+}
+
+.locality {
+  display: block;
+  margin-top: 6px;
+  font: 500 12px/1 var(--font-mono);
+  letter-spacing: 0.2em;
+  color: var(--color-header-ink);
+  opacity: 0.75;
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.link {
+  color: inherit;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 14px;
+  opacity: 0.85;
+  white-space: nowrap;
+}
+
+.link:hover {
+  opacity: 1;
+}
+
+.call {
+  padding: 8px 14px;
+  border-radius: var(--radius);
+  background: var(--color-bay);
+  color: var(--color-bay-ink);
+  font: 500 14px var(--font-mono);
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+@media (max-width: 760px) {
+  .inner {
+    flex-wrap: wrap;
+    row-gap: 8px;
+  }
+
+  .nav {
+    width: 100%;
+    gap: 4px;
+    margin-inline: -10px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .nav::-webkit-scrollbar {
+    display: none;
+  }
+
+  .link {
+    padding: 8px 10px;
+  }
+
+  .call {
+    margin-left: auto;
+  }
+}
+
+@media (max-width: 600px) {
+  .brand {
+    font-size: clamp(32px, 10vw, 42px);
+  }
+
+  /* MobileActionBar provides the call button on phones */
+  .call {
+    display: none;
+  }
+}
