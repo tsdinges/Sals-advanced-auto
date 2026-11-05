@@ -1,0 +1,89 @@
+.panel {
+  display: grid;
+  gap: 18px;
+  margin-top: 48px;
+  padding: 24px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+}
+
+.title {
+  font: 400 12px/1.4 var(--font-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.track {
+  position: relative;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin: 0;
+  padding: 18px 0 0;
+  list-style: none;
+}
+
+/* the rail */
+.track::before {
+  content: "";
+  position: absolute;
+  top: 6px;
+  left: 0;
+  right: 0;
+  height: 4px;
+  border-radius: 2px;
+  background: var(--color-line);
+}
+
+.mark {
+  position: relative;
+  padding-right: 12px;
+}
+
+/* the stop on the rail */
+.mark::before {
+  content: "";
+  position: absolute;
+  top: -17px;
+  left: 0;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--color-lake);
+  border: 3px solid var(--color-surface);
+}
+
+.miles {
+  display: block;
+  font: 900 32px/1 var(--font-display);
+  font-variant-numeric: tabular-nums;
+}
+
+.items,
+.note {
+  font-size: 14px;
+  color: var(--color-muted);
+}
+
+@media (max-width: 600px) {
+  .track {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    padding: 0 0 0 28px;
+  }
+
+  .track::before {
+    top: 4px;
+    bottom: 4px;
+    left: 6px;
+    right: auto;
+    width: 4px;
+    height: auto;
+  }
+
+  .mark::before {
+    top: 4px;
+    left: -28px;
+  }
+}

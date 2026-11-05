@@ -1,0 +1,24 @@
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: end;
+  gap: 12px 24px;
+  margin-bottom: 36px;
+}
+
+.title {
+  font-size: clamp(40px, 6vw, 64px);
+  font-weight: 900;
+}
+
+.intro {
+  max-width: 46ch;
+  color: var(--color-muted);
+}
+
+@media (max-width: 600px) {
+  .head {
+    margin-bottom: 24px;
+  }
+}

@@ -1,0 +1,64 @@
+.ticket {
+  position: relative;
+  min-width: 0;
+  background: var(--color-surface);
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius-lg);
+}
+
+/* Hazard-stripe top edge, like a shop work order */
+.ticket::before {
+  content: "";
+  position: absolute;
+  inset: 0 0 auto;
+  height: 8px;
+  border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+  background: repeating-linear-gradient(90deg, var(--color-bay) 0 16px, var(--color-ink) 16px 32px);
+}
+
+.inner {
+  display: grid;
+  gap: 14px;
+  padding: 28px 22px 22px;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  padding-bottom: 10px;
+  border-bottom: 1px dashed var(--color-line);
+}
+
+.row:last-child {
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
+.key {
+  font: 400 12px/1.4 var(--font-mono);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+  white-space: nowrap;
+}
+
+/* Values use the body face (owner feedback 2026-10-21) */
+.value {
+  text-align: right;
+  font: 600 16px/1.45 var(--font-body);
+}
+
+.phone {
+  font: 900 40px/1.1 var(--font-display);
+  letter-spacing: 0.02em;
+  color: var(--color-ink);
+  text-decoration: none;
+}
+
+@media (max-width: 600px) {
+  .phone {
+    font-size: 34px;
+  }
+}

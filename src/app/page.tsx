@@ -1,19 +1,27 @@
 import { site } from "@/config/site";
-import { Container } from "@/components/ui/Container";
-import { ShopStatusBadge } from "@/components/shop/ShopStatusBadge";
+import { services, maintenanceIntervals } from "@/content/services";
+import { HeroSection } from "@/components/sections/HeroSection";
+import { ServicesSection } from "@/components/sections/ServicesSection";
+import { ShopTicket } from "@/components/shop/ShopTicket";
 
 /**
- * Home page. Section 1 ships the shell only; the hero, services,
- * about, for-sale and contact sections are built next, one per commit,
- * as components under src/components/sections.
+ * Home page = composition only. Data comes from config/ and content/,
+ * presentation from components/. Remaining sections (About, For Sale,
+ * Contact) are added in later commits.
  */
 export default function HomePage() {
   return (
-    <Container>
-      <section style={{ paddingBlock: 64, display: "grid", gap: 16 }}>
-        <h1 style={{ fontSize: "clamp(48px, 9vw, 96px)" }}>{site.tagline}</h1>
-        <ShopStatusBadge hours={site.hours} timeZone={site.timeZone} fallback={site.hoursSummary} />
-      </section>
-    </Container>
+    <>
+      <HeroSection
+        eyebrow={`Auto repair · ${site.address.city}, ${site.address.region} · ${site.yearsInBusiness} years`}
+        headline={site.tagline}
+        lede="Squeaky brakes, a leaky radiator, a check-engine light that won't quit. Bring it to Sal's and we'll get you back on the road."
+        promises={["Experienced mechanics", "Quality service", "Fair prices"]}
+        primaryCta={{ label: "Book a service", href: "/#contact" }}
+        secondaryCta={{ label: "See what we fix", href: "/#services" }}
+        aside={<ShopTicket info={site} extraRows={[{ label: "Makes", value: "Foreign & domestic" }]} />}
+      />
+      <ServicesSection services={services} intervals={maintenanceIntervals} />
+    </>
   );
 }
