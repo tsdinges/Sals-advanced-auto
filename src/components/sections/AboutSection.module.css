@@ -4,26 +4,30 @@
   color: var(--color-header-ink);
 }
 
+/* Fixed column shares (not auto) so a long label can never push the story off-screen */
 .grid {
   display: grid;
-  grid-template-columns: auto 1fr;
+  grid-template-columns: minmax(0, 5fr) minmax(0, 7fr);
   gap: 56px;
   align-items: center;
 }
 
 .years {
-  font: 900 clamp(120px, 18vw, 220px) / 0.8 var(--font-display);
+  min-width: 0;
+  font: 900 clamp(120px, 16vw, 220px) / 0.8 var(--font-display);
   color: var(--color-bay);
 }
 
+/* "Years serving the Wolfeboro and surrounding community" — larger, per owner (2026-11-04) */
 .yearsLabel {
   display: block;
-  margin-top: 12px;
-  font: 400 13px/1.4 var(--font-mono);
-  letter-spacing: 0.14em;
+  max-width: 16ch;
+  margin-top: 18px;
+  font: 700 clamp(26px, 3vw, 38px) / 1.05 var(--font-display);
+  letter-spacing: 0.02em;
   text-transform: uppercase;
+  text-wrap: balance;
   color: var(--color-header-ink);
-  opacity: 0.7;
 }
 
 .copy {
