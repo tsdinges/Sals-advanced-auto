@@ -25,6 +25,7 @@ src/
     sections/          Home-page sections (Hero, Services, ...)
     services/          Services grid and maintenance schedule
     vehicles/          Car cards, photos, specs for /vehicles pages
+    contact/           Contact details, appointment form, form fields
   config/site.ts       Business details: name, phone, hours, address, nav
   content/             Editable content: services, vehicles for sale
   hooks/               Client-side React hooks (useShopStatus)
@@ -46,6 +47,8 @@ src/
 | Hours, phone, email, address | `src/config/site.ts` |
 | Add/remove a service | `src/content/services.ts` |
 | Car for sale | One `.json` file per car in `src/content/vehicles/` (see the README there) |
+| About text | `src/content/about.ts` |
+| Where form requests go | `src/lib/contact/submitters.ts` (Netlify Forms today) |
 | Brand colors / fonts | `src/styles/tokens.css` |
 
 ## Migration notes

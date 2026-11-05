@@ -1,0 +1,61 @@
+.section {
+  padding-block: 72px;
+  background: var(--color-header-bg);
+  color: var(--color-header-ink);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 56px;
+  align-items: center;
+}
+
+.years {
+  font: 900 clamp(120px, 18vw, 220px) / 0.8 var(--font-display);
+  color: var(--color-bay);
+}
+
+.yearsLabel {
+  display: block;
+  margin-top: 12px;
+  font: 400 13px/1.4 var(--font-mono);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--color-header-ink);
+  opacity: 0.7;
+}
+
+.copy {
+  display: grid;
+  gap: 12px;
+  max-width: 60ch;
+  min-width: 0;
+}
+
+.copy p {
+  opacity: 0.88;
+}
+
+.title {
+  margin-bottom: 8px;
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 900;
+}
+
+@media (max-width: 760px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: 24px;
+  }
+}
+
+@media (max-width: 600px) {
+  .section {
+    padding-block: 48px;
+  }
+
+  .years {
+    font-size: 110px;
+  }
+}

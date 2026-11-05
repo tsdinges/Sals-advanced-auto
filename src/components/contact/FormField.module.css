@@ -1,0 +1,41 @@
+.field {
+  display: grid;
+  gap: 6px;
+  min-width: 0;
+}
+
+.label {
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.optional {
+  font-weight: 400;
+  color: var(--color-muted);
+}
+
+.field :is(input, select, textarea) {
+  width: 100%;
+  padding: 11px 12px;
+  border: 1px solid var(--color-line);
+  border-radius: var(--radius);
+  background: var(--color-bg);
+  color: var(--color-ink);
+  /* 16px stops iPhone Safari from zooming in on focus */
+  font: 400 16px/1.4 var(--font-body);
+}
+
+.field textarea {
+  min-height: 110px;
+  resize: vertical;
+}
+
+.invalid :is(input, select, textarea) {
+  border-color: var(--color-closed);
+}
+
+.error {
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--color-closed);
+}

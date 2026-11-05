@@ -1,0 +1,20 @@
+<!doctype html>
+<!--
+  Not a page visitors see. Netlify scans this file at deploy time to register
+  the form, and the React ContactForm posts to it.
+  Field names must match ContactRequest in src/lib/contact/contact-request.ts.
+-->
+<html>
+  <body>
+    <form name="appointment-request" data-netlify="true" netlify-honeypot="company" hidden>
+      <input type="hidden" name="form-name" value="appointment-request" />
+      <input name="company" />
+      <input name="name" />
+      <input name="phone" />
+      <input name="email" />
+      <input name="vehicle" />
+      <input name="service" />
+      <textarea name="message"></textarea>
+    </form>
+  </body>
+</html>

@@ -1,13 +1,15 @@
 import { site } from "@/config/site";
 import { services, maintenanceIntervals } from "@/content/services";
+import { about } from "@/content/about";
 import { HeroSection } from "@/components/sections/HeroSection";
 import { ServicesSection } from "@/components/sections/ServicesSection";
+import { AboutSection } from "@/components/sections/AboutSection";
+import { ContactSection } from "@/components/sections/ContactSection";
 import { ShopTicket } from "@/components/shop/ShopTicket";
 
 /**
  * Home page = composition only. Data comes from config/ and content/,
- * presentation from components/. Remaining sections (About, For Sale,
- * Contact) are added in later commits.
+ * presentation from components/.
  */
 export default function HomePage() {
   return (
@@ -22,6 +24,13 @@ export default function HomePage() {
         aside={<ShopTicket info={site} extraRows={[{ label: "Makes", value: "Foreign & domestic" }]} />}
       />
       <ServicesSection services={services} intervals={maintenanceIntervals} />
+      <AboutSection
+        years={site.yearsInBusiness}
+        yearsLabel={`Years in ${site.address.city}`}
+        title={about.title}
+        paragraphs={about.paragraphs}
+      />
+      <ContactSection info={site} serviceOptions={services.map((s) => s.name)} />
     </>
   );
 }
