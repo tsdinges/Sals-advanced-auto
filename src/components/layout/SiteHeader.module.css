@@ -15,6 +15,24 @@
   padding-block: 12px;
 }
 
+/* Brand name + flag sit together and never wrap apart */
+.brandGroup {
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  min-width: 0;
+}
+
+/* Flag height matches the wordmark's cap height */
+.flag {
+  flex: none;
+  /* 1.9 : 1 flag ratio, 32px tall */
+  width: 61px;
+  height: 32px;
+  margin-top: 2px;
+  border-radius: 2px;
+}
+
 /* Brand: large, all-yellow wordmark per owner feedback (2026-10-21) */
 .brand {
   font: 900 40px/0.9 var(--font-display);
@@ -91,7 +109,16 @@
 
 @media (max-width: 600px) {
   .brand {
-    font-size: clamp(32px, 10vw, 42px);
+    font-size: clamp(30px, 9vw, 42px);
+  }
+
+  .brandGroup {
+    gap: 10px;
+  }
+
+  .flag {
+    width: clamp(38px, 12.35vw, 57px);
+    height: clamp(20px, 6.5vw, 30px);
   }
 
   /* MobileActionBar provides the call button on phones */

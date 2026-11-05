@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Container } from "@/components/ui/Container";
+import { UsFlag } from "@/components/ui/UsFlag";
 import styles from "./SiteHeader.module.css";
 
 interface NavItem {
@@ -23,10 +24,13 @@ export function SiteHeader({ name, locality, phone, navItems }: SiteHeaderProps)
   return (
     <header className={styles.header}>
       <Container className={styles.inner}>
-        <Link href="/" className={styles.brand}>
-          {name}
-          <small className={styles.locality}>{locality}</small>
-        </Link>
+        <div className={styles.brandGroup}>
+          <Link href="/" className={styles.brand}>
+            {name}
+            <small className={styles.locality}>{locality}</small>
+          </Link>
+          <UsFlag className={styles.flag} />
+        </div>
 
         <nav aria-label="Main" className={styles.nav}>
           {navItems.map((item) => (
