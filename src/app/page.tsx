@@ -26,7 +26,7 @@ export default function HomePage() {
       <ServicesSection services={services} intervals={maintenanceIntervals} />
       <AboutSection
         years={site.yearsInBusiness}
-        yearsLabel={`Years serving the ${site.address.city} and surrounding community`}
+        yearsLabel={`Years serving ${site.address.city} and surrounding community`}
         title={about.title}
         paragraphs={about.paragraphs}
       />
