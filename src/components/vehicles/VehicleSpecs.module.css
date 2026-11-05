@@ -1,0 +1,29 @@
+.specs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 32px;
+  margin: 0;
+}
+
+.specs dt {
+  font: 400 12px/1.4 var(--font-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--color-muted);
+}
+
+.specs dd {
+  margin: 0;
+  font: 900 32px/1 var(--font-display);
+  font-variant-numeric: tabular-nums;
+}
+
+.specs > div {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 4px;
+}
+
+.lg dd {
+  font-size: 44px;
+}

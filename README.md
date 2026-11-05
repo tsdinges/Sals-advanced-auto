@@ -22,7 +22,9 @@ src/
     ui/                Generic, reusable building blocks (Button, Container)
     layout/            Site chrome (SiteHeader, SiteFooter, MobileActionBar)
     shop/              Shop-specific widgets (ShopStatusBadge)
-    sections/          Home-page sections (coming next: Hero, Services, ...)
+    sections/          Home-page sections (Hero, Services, ...)
+    services/          Services grid and maintenance schedule
+    vehicles/          Car cards, photos, specs for /vehicles pages
   config/site.ts       Business details: name, phone, hours, address, nav
   content/             Editable content: services, vehicles for sale
   hooks/               Client-side React hooks (useShopStatus)
@@ -43,10 +45,10 @@ src/
 | --- | --- |
 | Hours, phone, email, address | `src/config/site.ts` |
 | Add/remove a service | `src/content/services.ts` |
-| Car for sale | `src/content/vehicles.ts` (set `available: false` to hide) |
+| Car for sale | One `.json` file per car in `src/content/vehicles/` (see the README there) |
 | Brand colors / fonts | `src/styles/tokens.css` |
 
 ## Migration notes
 
-- Old Wix URLs (`/services`, `/about-us`, `/contact-us`, `/vehicles`) redirect to home-page sections (`next.config.ts`).
+- Old Wix URLs `/services`, `/about-us` and `/contact-us` redirect to home-page sections (`next.config.ts`). `/vehicles` keeps its address as a real page.
 - Still needed from the owner: logo file, shop/team photos, car photos, confirmation the Mercedes is still for sale.

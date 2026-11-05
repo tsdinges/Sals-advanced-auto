@@ -63,15 +63,27 @@ export interface Service {
   summary: string;
 }
 
+/** available = listed; pending = listed with a "Sale pending" tag; sold = hidden */
+export type VehicleStatus = "available" | "pending" | "sold";
+
 export interface VehicleListing {
+  /** URL slug from the file name, e.g. "2001-mercedes-benz" -> /vehicles/2001-mercedes-benz */
   id: string;
   year: number;
   make: string;
   model?: string;
+  trim?: string;
   mileage: number;
   priceUsd: number;
-  description: string;
-  available: boolean;
-  /** Path under /public, once photos are provided */
-  imageSrc?: string;
+  status: VehicleStatus;
+  /** One or two sentences shown on the list card */
+  summary: string;
+  /** Longer description for the detail page; blank lines start new paragraphs */
+  description?: string;
+  /** Short facts, e.g. ["Automatic", "AWD", "New tires"] */
+  features?: string[];
+  /** Paths under /public, e.g. "/vehicles/2001-mercedes-benz/1.jpg". First is the cover. */
+  photos?: string[];
+  /** ISO date the car was listed; newest shows first */
+  listedOn: string;
 }

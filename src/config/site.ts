@@ -43,6 +43,6 @@ export const site: BusinessInfo = {
 export const navItems = [
   { label: "Services", href: "/#services" },
   { label: "About", href: "/#about" },
-  { label: "For Sale", href: "/#for-sale" },
+  { label: "Cars for Sale", href: "/vehicles" },
   { label: "Contact", href: "/#contact" },
 ] as const;

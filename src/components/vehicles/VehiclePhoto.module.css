@@ -1,0 +1,38 @@
+.frame {
+  position: relative;
+  aspect-ratio: 4 / 3;
+  max-width: 100%;
+  overflow: hidden;
+  background: var(--color-lake);
+}
+
+.img {
+  object-fit: cover;
+}
+
+.placeholder {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  align-content: end;
+  gap: 2px;
+  padding: 24px;
+  color: var(--color-lake-ink);
+}
+
+.year {
+  font: 900 64px/0.9 var(--font-display);
+}
+
+.make {
+  font: 700 28px/1 var(--font-display);
+  text-transform: uppercase;
+}
+
+.soon {
+  margin-top: 10px;
+  font: 400 12px/1.4 var(--font-mono);
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.8;
+}

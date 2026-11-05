@@ -16,7 +16,7 @@ const nextConfig: NextConfig = {
       { source: "/services", destination: "/#services", permanent: true },
       { source: "/about-us", destination: "/#about", permanent: true },
       { source: "/contact-us", destination: "/#contact", permanent: true },
-      { source: "/vehicles", destination: "/#for-sale", permanent: true },
+      // /vehicles keeps its Wix address: it is a real page now.
     ];
   },
 };
